@@ -55,10 +55,15 @@ function Carousel() {
     ];
 
     const startIndex = currentSlide * 4;
-
-
+    
+    
     const visibleCities = cities.slice(startIndex, startIndex + 4);
-
+    
+    const previSlide = () => {
+        setCurrentSlide((prevSlideIndex) =>
+            prevSlideIndex === 0 ? Math.ceil(cities.length / 4) - 1 : prevSlideIndex - 1
+        );
+    };
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prevSlideIndex) =>
@@ -70,10 +75,23 @@ function Carousel() {
             clearInterval(interval);
         };
     }, [currentSlide]);
+    
+    const nextSlide = () => {
+        setCurrentSlide((prevSlideIndex) =>
+            prevSlideIndex === Math.ceil(cities.length / 4) - 1 ? 0 : prevSlideIndex + 1
+        );
+    };
+    
+
 
 
     return (
         <div className="bg-orange-100 carousel flex flex-row justify-around items-center h-[25rem] my-4 lg:justify-evenly">
+            <button className="prev-btn" onClick={previSlide}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 mr-[4px] lg:mr-[3rem] hover:animate-pulse">
+                    <path d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </button>
             <div className="slides grid grid-cols-2 grid-rows-2 gap-6 items-center h-64 w-96 lg:h-72 lg:w-[34rem]">
                 {visibleCities.map((city, index) => (
                     <div key={index} className="slide group h-full w-full shadow-fxc transform transition duration-300 ease-out">
@@ -86,6 +104,11 @@ function Carousel() {
                     </div>
                 ))}
             </div>
+            <button className="next-btn" onClick={nextSlide}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 ml-[4px] lg:ml-[3rem] hover:animate-pulse">
+                    <path d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
         </div>
     );
 }
