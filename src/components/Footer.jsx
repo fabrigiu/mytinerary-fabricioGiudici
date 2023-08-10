@@ -1,4 +1,5 @@
 import Socials from './Socials'
+import Menu from './Menu'
 function Footer() {
   return (
     <footer className="bg-orange-200 absolute w-full start-0 inset-x-0 bottom-auto">
@@ -6,7 +7,8 @@ function Footer() {
         <div className="flex justify-start items-center">
           <p className="footer-text 4xl pb-1 pl-1 font-semibold">My Tinerary</p>
         </div>
-        <div className="flex text-center justify-center font-medium mr-[0.5rem]">
+        <div className="flex text-center justify-center font-medium mr-[0.6rem]">
+          <Menu />
         </div>
         <Socials />
       </div>
