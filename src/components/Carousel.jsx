@@ -89,6 +89,7 @@ function Carousel() {
 
   return (
     <div className="bg-orange-100 carousel flex flex-row justify-around items-center h-[25rem] my-4 lg:justify-evenly">
+
       <button className="prev-btn" onClick={previSlide}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -105,6 +106,8 @@ function Carousel() {
           />
         </svg>
       </button>
+
+      
       <div className="slides grid grid-cols-2 grid-rows-2 gap-6 items-center h-64 w-96 lg:h-72 lg:w-[34rem]">
         {visibleCities.map((city, index) => (
           <div
@@ -122,6 +125,8 @@ function Carousel() {
           </div>
         ))}
       </div>
+
+
       <button className="next-btn" onClick={nextSlide}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

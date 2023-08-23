@@ -3,12 +3,13 @@ import Menu2 from "./Menu2";
 import Menu from "./Menu";
 
 function Header() {
+  
   return (
     <header className="navbar flex justify-between items-center text-base pt-1 pb-1 w-full font-semibold font-custom">
       <h1 className="text-xl sm:text-xl">My Tinerary</h1>
-      <nav className="flex justify-between items-center">
+      <nav className="flex justify-between items-center gap-3">
         <Menu />
-        <button className="flex items-center gap-3 hover:animate-pulse">
+        <button className="flex items-center hover:animate-pulse">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -20,7 +21,7 @@ function Header() {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+              d="M16 0H4a2 2 0 0 0-2 2v1H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v2H1a1 1 0 0 0 0 2h1v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-5.5 4.5a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM13.929 17H7.071a.5.5 0 0 1-.5-.5 3.935 3.935 0 1 1 7.858 0 .5.5 0 0 1-.5.5Z"
             />
           </svg>
         </button>
