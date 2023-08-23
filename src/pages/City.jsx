@@ -18,7 +18,7 @@ function City() {
   }, [id]);
 
   return (
-    <section className="details h-full flex flex-col border-orange-200">
+    <section className="h-full flex flex-col border-orange-200">
       <div className="flex flex-col my-2 h-full w-full mt:flex-row border-2 border-orange-600">
         <img
           src={city?.image}
