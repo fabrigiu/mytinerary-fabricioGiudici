@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Link from "../components/Link";
 
-function Details() {
+function City() {
   const { id } = useParams();
   const [city, setCity] = useState();
 
@@ -33,10 +33,10 @@ function Details() {
       </div>
       <Link
         to={"/cities"}
-        title={"Back"}
-        className="border-2 border-orange-600 mb-2 mr-auto text-sm font-bold text-gray-100 bg-orange-300 p-2 rounded self-center"
+        title={"X"}
+        className="hover:animate-pulse w-20 border-2 border-orange-600 mb-2 text-sm font-bold text-gray-100 bg-orange-300 p-2 rounded self-center"
       />
-      <div className="min-h-screen bg-orange-300 flex flex-col items-center justify-center">
+      <div className="h-1/3 m-2 p-4 bg-orange-300 flex flex-col items-center justify-center">
         <h1 className="text-5xl text-white font-bold mb-4 animate-pulse">
           Coming Soon
         </h1>
@@ -45,4 +45,4 @@ function Details() {
   );
 }
 
-export default Details;
+export default City;

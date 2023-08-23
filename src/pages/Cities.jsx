@@ -3,6 +3,8 @@ import axios from "axios";
 import Card from "../components/Card";
 
 const Cities = () => {
+
+  
   const [cities, setCities] = useState([]);
 
   useEffect(() => {
@@ -11,7 +13,7 @@ const Cities = () => {
       .then((response) => {
         setCities(response.data.cities);
       })
-      .catch((error) => console.error("Error fetching city data:", error));
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
   const handleInputChange = async (cities) => {
@@ -29,11 +31,11 @@ const Cities = () => {
 
   return (
     <section className="text-center bg-orange-200 my-4 h-full w-full">
-      <h2 className="text-3xl pt-6 mb-4">Cities</h2>
+      <h2 className="text-white text-3xl pt-6 mb-4">Cities</h2>
 
       <input
         onChange={handleInputChange}
-        className="border-2 border-black-100 focus:outline-none focus:ring focus:ring-orange-300 hover:ring-orange-100 hover:border-orange-500 rounded py-1 px-2 h-fit mdt:w-fit mt:ml-[55%]"
+        className="border-2 border-grey-900 focus:outline-none focus:ring focus:ring-orange-300 hover:ring-orange-100 hover:border-orange-500 rounded py-1 px-2 h-fit mdt:w-fit mt:ml-[55%]"
         type="text"
         placeholder="Find your city"
       />
@@ -44,10 +46,10 @@ const Cities = () => {
             cities?.map((city) => (
               <Card
                 key={city._id}
+                id={city._id}
                 name={city.name}
                 country={city.country}
                 image={city.image}
-                id={city._id}
               />
             ))
           ) : (
