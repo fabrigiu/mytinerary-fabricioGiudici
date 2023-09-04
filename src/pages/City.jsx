@@ -3,45 +3,47 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import Link from "../components/Link";
 
+
+import ItineraryList from "../components/ItineraryList";
+
 function City() {
   const { id } = useParams();
-  const [city, setCity] = useState();
+  const [city, setCity] = useState(null);
 
   useEffect(() => {
     axios
       .get(`http://localhost:8000/api/cities/${id}`)
       .then((response) => {
-        console.log(response);
         setCity(response.data.city);
       })
       .catch((error) => console.error("Error fetching city data:", error));
   }, [id]);
 
   return (
-    <section className="h-full flex flex-col border-orange-200">
-      <div className="flex flex-col my-2 h-full w-full mt:flex-row border-2 border-orange-600">
-        <img
-          src={city?.image}
-          alt={city?.name}
-          className="h-[26rem] w-full mt:w-1/2 object-cover bg-center"
+    <main>
+      <section className="h-full flex flex-col">
+        <Link
+          to={"/cities"}
+          title={"X"}
+          className="hover:animate-pulse w-20 border-2 border-orange-600 mb-2 text-sm font-bold text-gray-100 bg-orange-300 p-2 rounded self-end"
         />
-        <div className="h-2/4 mt:h-auto mt:flex mt:flex-col mt:items-center mt:justify-center mt:w-1/2 mt:px-24 px-6 py-8 bg-orange-300 ">
-          <h3 className="text-slate-100 text-2xl font-medium">
-            {city?.name}, {city?.country}
-          </h3>
+        <div className="border-2 border-orange-600 flex flex-col my-2 h-full w-full mt:flex-row">
+          <div className="h-2/4 mt:h-auto mt:flex mt:flex-col mt:items-center mt:justify-center mt:w-1/2 mt:px-24 px-6 py-8 bg-orange-300">
+            <h3 className="text-2xl font-medium text-slate-100">
+              {city?.name}, {city?.country}
+            </h3>
+            <p className="text-gray-900 text-base">{city?.description}</p>
+          </div>
+          <img
+            src={city?.image}
+            alt={city?.name}
+            className="h-[26rem] w-full mt:w-1/2 object-cover bg-center"
+          />
         </div>
-      </div>
-      <Link
-        to={"/cities"}
-        title={"X"}
-        className="hover:animate-pulse w-20 border-2 border-orange-600 mb-2 text-sm font-bold text-gray-100 bg-orange-300 p-2 rounded self-center"
-      />
-      <div className="h-1/3 m-2 p-4 bg-orange-300 flex flex-col items-center justify-center">
-        <h1 className="text-5xl text-white font-bold mb-4 animate-pulse">
-          Coming Soon
-        </h1>
-      </div>
-    </section>
+        {}
+      </section>
+      <ItineraryList cityId={city?._id} />
+    </main>
   );
 }
 
