@@ -55,7 +55,6 @@ function Carousel() {
   ];
 
   const startIndex = currentSlide * 4;
-
   const visibleCities = cities.slice(startIndex, startIndex + 4);
 
   const previSlide = () => {
@@ -65,19 +64,6 @@ function Carousel() {
         : prevSlideIndex - 1
     );
   };
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlideIndex) =>
-        prevSlideIndex === Math.ceil(cities.length / 4) - 1
-          ? 0
-          : prevSlideIndex + 1
-      );
-    }, 2000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, [currentSlide]);
 
   const nextSlide = () => {
     setCurrentSlide((prevSlideIndex) =>
@@ -87,32 +73,39 @@ function Carousel() {
     );
   };
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlideIndex) =>
+        prevSlideIndex === Math.ceil(cities.length / 4) - 1
+          ? 0
+          : prevSlideIndex + 1
+      );
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [currentSlide]);
+
   return (
     <div className="bg-orange-100 carousel flex flex-row justify-around items-center h-[25rem] my-4 lg:justify-evenly">
-
       <button className="prev-btn" onClick={previSlide}>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          className="w-6 h-6"
+          viewBox="0 0 1024 1024"
+          fill="currentColor"
+          height="2rem"
+          width="2rem"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M21 16.811c0 .864-.933 1.405-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953l7.108-4.062A1.125 1.125 0 0121 8.688v8.123zM11.25 16.811c0 .864-.933 1.405-1.683.977l-7.108-4.062a1.125 1.125 0 010-1.953L9.567 7.71a1.125 1.125 0 011.683.977v8.123z"
-          />
+          <path d="M872 474H286.9l350.2-304c5.6-4.9 2.2-14-5.2-14h-88.5c-3.9 0-7.6 1.4-10.5 3.9L155 487.8a31.96 31.96 0 000 48.3L535.1 866c1.5 1.3 3.3 2 5.2 2h91.5c7.4 0 10.8-9.2 5.2-14L286.9 550H872c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z" />
         </svg>
       </button>
 
-      
+
       <div className="slides grid grid-cols-2 grid-rows-2 gap-6 items-center h-64 w-96 lg:h-72 lg:w-[34rem]">
         {visibleCities.map((city, index) => (
           <div
             key={index}
-            className="slide group h-full w-full shadow-fxc transform transition duration-300 ease-out"
+            className="slide group h-full w-full shadow-fxc transform transition duration-150"
           >
             <p className="absolute inset-x-0 bottom-0 text-transparent duration-200 group-hover:text-gray-100 group-hover:bg-orange-500/60 ">
               {city.name}
@@ -126,21 +119,14 @@ function Carousel() {
         ))}
       </div>
 
-
       <button className="next-btn" onClick={nextSlide}>
         <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          className="w-6 h-6"
+          viewBox="0 0 1024 1024"
+          fill="currentColor"
+          height="2rem"
+          width="2rem"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3 8.688c0-.864.933-1.405 1.683-.977l7.108 4.062a1.125 1.125 0 010 1.953l-7.108 4.062A1.125 1.125 0 013 16.81V8.688zM12.75 8.688c0-.864.933-1.405 1.683-.977l7.108 4.062a1.125 1.125 0 010 1.953l-7.108 4.062a1.125 1.125 0 01-1.683-.977V8.688z"
-          />
+          <path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-.7 5.2-2L869 536.2a32.07 32.07 0 000-48.4z" />
         </svg>
       </button>
     </div>
