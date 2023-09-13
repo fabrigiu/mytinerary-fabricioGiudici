@@ -1,14 +1,15 @@
 import React from "react";
 
 import Link from "./Link";
-
+// max-w-xs mx-auto bg-white shadow-lg rounded-lg overflow-hidden
+//city-card group relative block m-4 h-64 w-[90%] transition-all md:w-1/3 md:hover:w-1/3 lg:w-1/5 lg:hover:w-1/5 sm:h-80 lg:h-96
 function Card({ id, name, country, image }) {
   return (
-    <div className="city-card group relative block m-4 h-64 w-[90%] transition-all md:w-1/3 md:hover:w-1/3 lg:w-1/5 lg:hover:w-1/5 sm:h-80 lg:h-96">
+    <div className="city-card group relative block m-4 h-64 w-[90%] md:w-1/3 shadow-lg rounded-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2 md:hover:w-1/3 lg:w-1/5 lg:hover:w-1/5 sm:h-80 lg:h-96">
       <span className="absolute inset-0 border-l-2 border-t-2 border-orange"></span>
 
       <div
-        className="relative flex flex-wrap h-full transform bg-cover bg-center items-end border-2 border-orange-600 transition-all"
+        className="relative hover:shadow-xl flex flex-wrap h-full transform bg-cover bg-center items-end transition-all"
         style={{ backgroundImage: `url(${image})` }}
       >
         <div className="p-0 !pt-0 py-2 flex flex-row flex-wrap items-center content-center justify-evenly bg-orange-300 w-full transition-opacity group-hover:absolute group-hover:opacity-0">
@@ -17,7 +18,7 @@ function Card({ id, name, country, image }) {
           </h2>
         </div>
 
-        <div className="h-full hidden opacity-0 overflow-hidden transition-opacity duration-1 group-hover:flex group-hover:flex-col group-hover:items-center group-hover:opacity-100 sm:p-6 lg:p-4">
+        <div className="h-full hidden opacity-0  overflow-hidden transition-opacity duration-1 group-hover:flex group-hover:flex-col group-hover:items-center group-hover:opacity-100 sm:p-6 lg:p-4">
           <div className="align-center">
             <h3 className="bg-orange-300  text-slate-100 mt-2 px-1 rounded mx-auto w-fit font-bold md:mt:1 sm:text-xl">
               {name},

@@ -89,7 +89,7 @@ function Carousel() {
 
   return (
     <div className="bg-orange-100 carousel flex flex-row justify-around items-center h-[25rem] my-4 lg:justify-evenly">
-      <button className="prev-btn" onClick={previSlide}>
+      <button className="prev-btn transition duration-300 transform hover:-translate-y-1" onClick={previSlide}>
         <svg
           viewBox="0 0 1024 1024"
           fill="currentColor"
@@ -119,7 +119,7 @@ function Carousel() {
         ))}
       </div>
 
-      <button className="next-btn" onClick={nextSlide}>
+      <button className="next-btn transition duration-300 transform hover:-translate-y-1" onClick={nextSlide}>
         <svg
           viewBox="0 0 1024 1024"
           fill="currentColor"

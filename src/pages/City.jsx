@@ -4,6 +4,7 @@ import axios from "axios";
 import Link from "../components/Link";
 
 
+
 import ItineraryList from "../components/ItineraryList";
 
 function City() {
@@ -24,8 +25,8 @@ function City() {
       <section className="h-full flex flex-col">
         <Link
           to={"/cities"}
-          title={"X"}
-          className="hover:animate-pulse w-20 border-2 border-orange-600 mb-2 text-sm font-bold text-gray-100 bg-orange-300 p-2 rounded self-end"
+          title={"Go Back"}
+          className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded"
         />
         <div className="border-2 border-orange-600 flex flex-col my-2 h-full w-full mt:flex-row">
           <div className="h-2/4 mt:h-auto mt:flex mt:flex-col mt:items-center mt:justify-center mt:w-1/2 mt:px-24 px-6 py-8 bg-orange-300">

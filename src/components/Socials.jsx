@@ -2,13 +2,13 @@ import React from "react";
 
 function Socials() {
   return (
-    <ul className="flex justify-center items-center gap-4 md:gap-4">
-      <li>
+    <ul className="flex justify-center items-center gap-4 md:gap-4 ">
+      <li className="transition duration-300 transform hover:-translate-y-1">
         <a
           href="https://www.facebook.com/"
           rel="noreferrer"
           target="_blank"
-          className="text-gray-700"
+          className="text-gray-700 "
         >
           <span className="sr-only">Facebook</span>
           <svg
@@ -25,7 +25,7 @@ function Socials() {
           </svg>
         </a>
       </li>
-      <li>
+      <li className="transition duration-300 transform hover:-translate-y-1">
         <a
           href="https://twitter.com/"
           rel="noreferrer"
@@ -43,7 +43,7 @@ function Socials() {
           </svg>
         </a>
       </li>
-      <li>
+      <li className="transition duration-300 transform hover:-translate-y-1">
         <a
           href="https://www.instagram.com/"
           rel="noreferrer"

@@ -20,7 +20,7 @@ function Home() {
                 their cities!
               </p>
               <div className="mt-3">
-                <button variant="text" className="flex items-center gap-2 hover:animate-pulse">
+                <button variant="text" className="flex items-center gap-2 hover:animate-pulse transition duration-300 transform hover:-translate-y-1">
                   View More{" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
