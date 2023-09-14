@@ -27,7 +27,7 @@ const Cities = () => {
   return (
     <section className="text-center bg-orange-200 my-4 h-full w-full">
       <h2 className="text-white text-3xl pt-6 mb-4">Cities</h2>
-      <div className="bg-orange-200  hover:border-orange-300 rounded flex flex-row group w-40 mdt:w-48 lg:w-56 m-0 ml-auto mr-auto lg:mr-8 justify-between">
+      <div className="qbg-orange-200  hover:border-orange-300 rounded flex flex-row group w-40 mdt:w-48 lg:w-56 m-0 ml-auto mr-auto lg:mr-8 justify-between">
         <input
           onChange={handleResetCities}
           name="input-search"

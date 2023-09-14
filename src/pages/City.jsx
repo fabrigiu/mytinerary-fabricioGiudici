@@ -26,9 +26,9 @@ function City() {
         <Link
           to={"/cities"}
           title={"Go Back"}
-          className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded"
+          className="bg-orange-300 hover:bg-orange-400 text-white font-bold py-2 px-4 rounded"
         />
-        <div className="border-2 border-orange-600 flex flex-col my-2 h-full w-full mt:flex-row">
+        <div className="flex flex-col my-2 h-full w-full mt:flex-row">
           <div className="h-2/4 mt:h-auto mt:flex mt:flex-col mt:items-center mt:justify-center mt:w-1/2 mt:px-24 px-6 py-8 bg-orange-300">
             <h3 className="text-2xl font-medium text-slate-100">
               {city?.name}, {city?.country}

@@ -1,4 +1,4 @@
-import { Disclosure } from "@headlessui/react";
+import { Disclosure, Transition } from "@headlessui/react";
 
 function Itinerary({ title, name, photo, duration, likes, price, hashtags }) {
   const svgMarkup = (
@@ -22,7 +22,7 @@ function Itinerary({ title, name, photo, duration, likes, price, hashtags }) {
 
   return (
     <section className="w-full h-full">
-      <div className="border-2 border-orange-600 bg-orange-200 pb-6 my-4">
+      <div className="bg-orange-200 pb-6 my-4">
         <h3 className="text-2xl font-medium text-slate-100 py-4 text-center bg-orange-300">
           {title}
         </h3>
