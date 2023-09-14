@@ -16,7 +16,7 @@ const signup = () => {
     image: "",
   });
 
-  const countries = ["Argentina", "Chile", "Uruguay", "Colombia", "Peru", "Brasil", "Mexico", "Paraguay"];
+  const countries = ["Argentina", "Brazil", "Chile", "Colombia", "Peru", "Uruguay", "Mexico", "Paraguay"];
 
   const dispatch = useDispatch();
   const handleInput = (e) => {
